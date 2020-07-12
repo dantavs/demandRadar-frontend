@@ -3,42 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
-    <title>Document</title>
+    <title>Radar de Demandas</title>
     <link rel="stylesheet" href="styles.css"></link>
 </head>
 <body>
-    <h1>Radar de Demandas</h1>
-    <ul id=issuesList>
+    <h1 class='title'>Radar de Demandas</h1>
+    <div class='headerContent'>
+        <img src='assets/radar.png' class='logo'>
+        <form class='getDemandList-form'>
+            <div class='formGroup'>
+                <div>
+                    <strong>Selecione</strong>
+                    <select name="demandView" id="demandViewSelect">
+                        <option value="radar">Radar de Demandas</option>
+                        <option value="entrega">Entrega de Valor</option>
+                    </select>
+                </div>
+                <button type="submit" class='button'>Buscar resultados</button>
+            </div>
+        </form>
+    </div>
+    <ul id=demandList>
     </ul>
 
     <script src='demandRadar.js'></script>
-    <script>
-        async function getIssuesList(){
-            const issues = await listIssues()
-
-            let issueItems = ""
-            const issuesList = issues => {
-                issues.forEach((issue) => {
-                    issueItems += 
-                        `<li>
-                            <strong>${issue.key}</strong>
-                            <strong>${issue.epicName}</strong>
-                            <span>${issue.summary}</span>
-                            <span>${issue.project}</span>
-                        </li>`
-                })
-
-                let listElement = document.querySelector('#issuesList')
-                listElement.innerHTML = issueItems
-
-        }
-
-            issuesList(issues)
-
-        }
-        
-        getIssuesList()
-        
-    </script>
 </body>
 </html>
