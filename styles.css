@@ -4,7 +4,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: monospace;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 0.9rem;
 }
 
 #demandList {
@@ -99,7 +100,7 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin: 0 auto;
+    margin: 0 auto 2rem;
     max-width: 600px;
     height: 100px;
 }
@@ -121,4 +122,45 @@
 .title {
     margin: 0 auto 20px;
     text-align: center;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.infoContainer {
+    background-color: white;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 9rem;
+    color: darkslategray;
+    background-image: url('/assets/logo-age-technology.jpg');
+    background-repeat: no-repeat;
+    background-size: 20rem;
+}
+
+.demandContainer {
+    padding: 0 1rem;
+}
+
+h2 {
+    font-size: 3rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+h3 {
+    font-size: 1.5rem;
+    text-align: left;
+    color: darkorange;
+}
+
+.imgLogoAge{
+    position: relative;
+    float: left;
+    top: 0;
+    width:10rem;
 }

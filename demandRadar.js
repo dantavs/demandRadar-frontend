@@ -1,5 +1,5 @@
-async function getIssues() {
-    const url = 'http://127.0.0.1:3333/api/v1/getIssuesList'
+async function getIssues(context) {
+    const url = `http://127.0.0.1:3333/api/v1/getIssuesList/radarSOC`
     try {
         const response = await fetch(url)
         const content = await response.text()
@@ -9,16 +9,33 @@ async function getIssues() {
     }
 }
 
-async function listIssues(){
-    const res = await getIssues()
+async function listIssues(context){
+    const res = await getIssues(context)
     const issues = res.issue
 
     return issues
 }
 
+function getContext(option){
+    let context = ''
+    switch (option){
+        case ('radar'):
+            context = 'radarSOC'
+            break
+        case ('entrega'):
+            context ='radarSOC'
+            break
+        default:
+            break
+    }
+    return context
+}
+
 async function getIssuesList(viewType){
 
-    const issues = await listIssues()
+    const context = getContext(viewType)
+
+    const issues = await listIssues(context)
 
     let issueItems = ""
     const issuesList = issues => {
@@ -52,9 +69,6 @@ async function getIssuesList(viewType){
         listElement.innerHTML = issueItems
 
 }
-
-
-
     issuesList(issues)
 
 }
