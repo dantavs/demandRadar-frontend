@@ -84,10 +84,15 @@
 
 .formGroup {
     display: flex;
-    flex-direction: column;
-    width: 300px;
-    height: 100%;
+    flex-direction: row;
+    width: 500px;
+    height: 80px;
     align-content: center;
+}
+
+.formSelects {
+    display: flex;
+    flex-direction: column;
 }
 
 .logo {
@@ -105,13 +110,13 @@
     height: 100px;
 }
 
-#demandViewSelect{
+#demandViewSelect, #projectSelect{
     height: 40px;
     width: 100%
 }
 
 .button{
-    height: 40px;
+    height: 100%;
     background-color: darkslategray;
     color: white;
     font-weight: bold;

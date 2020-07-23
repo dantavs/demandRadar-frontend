@@ -11,12 +11,16 @@
     <div class='headerContent'>
         <img src='assets/radar.png' class='logo'>
         <form class='getDemandList-form'>
+            <strong>Selecione</strong>
             <div class='formGroup'>
-                <div>
-                    <strong>Selecione</strong>
+                <div class='formSelects'>
                     <select name="demandView" id="demandViewSelect">
                         <option value="radar">Radar de Demandas</option>
                         <option value="entrega">Entrega de Valor</option>
+                    </select>
+                    <select name="project" id="projectSelect">
+                        <option value="RDI">RDI</option>
+                        <option value="SOC">SOC</option>
                     </select>
                 </div>
                 <button type="submit" class='button'>Buscar resultados</button>
